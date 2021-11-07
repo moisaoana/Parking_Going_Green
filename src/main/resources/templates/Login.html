@@ -31,12 +31,6 @@
             opacity: 0.8;
         }
 
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
         .imgcontainer {
             text-align: center;
             margin: 24px 0 12px 0;
@@ -56,13 +50,6 @@
             padding-top: 16px;
         }
 
-        .bgimg {
-
-            min-height: 100%;
-            background-position: center;
-            background-size: cover;
-        }
-
         /* Change styles for span and cancel button on extra small screens */
         @media screen and (max-width: 300px) {
             span.psw {
@@ -72,20 +59,17 @@
         }
     </style>
 </head>
-<body class="w3-light-grey">
-<div class="bgimg w3-display-container w3-text-white">
+<body style="background-color:darkslategray;">
+<div class=" w3-display-container w3-text-white">
     <div class="w3-content" style="max-width:600px">
 
         <header class="w3-container w3-center w3-padding-32">
-            <h1><b>Welcome to Theater Booking app!</b></h1>
+            <h1><b>Login page</b></h1>
         </header>
         <div class="w3-container">
 
             <div class="w3-card-4 w3-margin w3-white">
                 <form action="" method="post">
-                    <div class="imgcontainer">
-                        <img src="images/avatar2.jpg" alt="Avatar" class="avatar">
-                    </div>
 
                     <div class="container">
                         <label><b>Username</b></label>
@@ -97,7 +81,7 @@
                         <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
 
                         <p>
-                            Not yet a member? <a href="Register.php?">Sign up</a>
+                            Not yet a member? Sign up
                         </p>
 
                     </div>
