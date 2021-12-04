@@ -23,7 +23,6 @@ public class LoginController {
         return "login";
     }
 
-
     @PostMapping("/profile")
     public String greetingSubmit(@ModelAttribute User user, Model model) {
         model.addAttribute("user", user);
@@ -32,6 +31,7 @@ public class LoginController {
         model.addAttribute("zones", zones);
         return "profile";
     }
+
 
     /*@PostMapping("/login")
     public String greetingSubmit1(@ModelAttribute User user, Model model) {
