@@ -177,10 +177,9 @@
                     <img src="https://www.dbs.com.sg/iwov-resources/media/images/articles/5-facts-about-electric-vehicles/5-facts-about-electric-vehicles-hero.jpg" style="width:100%" alt="Avatar">
                 </div>
                 <div class="w3-container">
-                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i> <input type="text" th:field="*{username}" name="txt_uname" placeholder="Enter Username" required> </p>
+                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i> <input type="text" th:field="*{username}" name="txt_uname" placeholder="Enter Username" readonly> </p>
                     <p><i class="fa fa-dot-circle-o fa-fw w3-margin-right w3-large w3-text-black"></i><a href="/login">Logout</a></p>
-                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i>  <input type="text" th:field="*{password}" name="txt_pwd" placeholder="Enter Password" required></p>
-
+                    <p></i>  <input type="hidden" th:field="*{password}" name="txt_pwd" placeholder="Enter Password" required></p>
                     <hr>
                 </div>
             </div>
