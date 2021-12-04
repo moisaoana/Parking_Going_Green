@@ -1,6 +1,9 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://thymeleaf.org">
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
@@ -69,16 +72,16 @@
         <div class="w3-container">
 
             <div class="w3-card-4 w3-margin w3-white">
-                <form action="" method="post">
+                <form action="#" th:action="@{/profile}" th:object="${user}" method="post">
 
                     <div class="container">
                         <label><b>Username</b></label>
-                        <input type="text"  name="txt_uname" placeholder="Enter Username" required>
+                        <input type="text" th:field="*{username}" name="txt_uname" placeholder="Enter Username" required>
 
                         <label><b>Password</b></label>
-                        <input type="password"  name="txt_pwd" placeholder="Enter Password" required>
+                        <input type="password" th:field="*{password}" name="txt_pwd" placeholder="Enter Password" required>
 
-                        <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
+                        <button type="submit"  value="Submit" name="but_submit" id="but_submit">Login</button>
 
                         <p>
                             Not yet a member? Sign up
