@@ -23,6 +23,15 @@ public class ParkingSession {
 
 
     }
+
+    public List<Zone> getZones() {
+        return zones;
+    }
+
+    public void setZones(List<Zone> zones) {
+        this.zones = zones;
+    }
+
     public void init(){
         ElectricCar electricCar1=new ElectricCar("CJ10AAA",true,ChargingStatus.full);
         ElectricCar electricCar2=new ElectricCar("CJ10AAB",true,ChargingStatus.medium);

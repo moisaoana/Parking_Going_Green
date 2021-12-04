@@ -185,13 +185,14 @@
             <div class="w3-container w3-card w3-white w3-margin-bottom">
                 <div class="w3-container">
                     <h5 class="w3-opacity"><b></b></h5>
+
                     <label for="zone">Select current location:
-                    <select name="zone" id="zone">
-                        <option value="zone1">Zone1</option>
-                        <option value="zone2">Zone2</option>
+                        <select name="zone" id="zone">
+                        <option th:each="zone : ${zones}"
+                           th:text="${zone.name}"></option>
                     </select>
                     </label>
-                    <hr>
+
                 </div>
             </div>
         </div>
@@ -204,4 +205,12 @@
 </body>
 </html>
 
+<script>
+    const cars = <p th:text="${user.username}"/>
+    var inputs = '';
+    for (var i = 0; i < parking; i++) {
+        inputs += '<input name="scores" type="radio" value="' + [i] + '" id="' + i + '">'+cars[i]+'';
+    }
+    document.getElementById('NPSform').insertAdjacentHTML('afterbegin', inputs);
+</script>
 
