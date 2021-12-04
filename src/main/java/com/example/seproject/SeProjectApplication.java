@@ -1,5 +1,6 @@
 package com.example.seproject;
 
+import com.example.seproject.Model.ParkingSession;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ public class SeProjectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SeProjectApplication.class, args);
+        ParkingSession parkingSession=new ParkingSession();
+       // parkingSession.init();
     }
     /*@GetMapping("/hello") public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
        return String.format("Hello %s!", name); }*/
