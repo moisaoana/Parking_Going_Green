@@ -8,6 +8,7 @@ public class ParkingSession {
     public ParkingSession(){
 
         zones=Serializator.deserializeZones();
+        /*
         for(Zone zone: zones){
             System.out.println(zone.getName());
             for(ParkingStation parkingStation: zone.getParkingStationList()){
@@ -20,6 +21,8 @@ public class ParkingSession {
                 }
             }
         }
+
+         */
 
 
     }

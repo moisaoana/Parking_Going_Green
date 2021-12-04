@@ -7,7 +7,7 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;background-color:#77b300;}
 
 
     .modal {
@@ -90,6 +90,9 @@
     .container {
         padding: 16px;
     }
+    .text-center {
+        text-align: center;
+    }
 
 
 
@@ -158,10 +161,14 @@
 </style>
 <body class="w3-light-grey">
 <!-- Page Container -->
+<form action="#" th:action="@{/profile}" th:object="${user}" method="post">
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
     <h1 style="text-align:center;">Welcome, <b th:text="${user.username}"/>!</h1>
     <!-- The Grid -->
+
     <div class="w3-row-padding">
+
 
         <!-- Left Column -->
         <div class="w3-third">
@@ -171,8 +178,12 @@
                     <img src="https://www.dbs.com.sg/iwov-resources/media/images/articles/5-facts-about-electric-vehicles/5-facts-about-electric-vehicles-hero.jpg" style="width:100%" alt="Avatar">
                 </div>
                 <div class="w3-container">
-                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i> <b th:text="${user.username}"/> </p>
+                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i> <input type="text" th:field="*{username}" name="txt_uname" placeholder="Enter Username" required> </p>
                     <p><i class="fa fa-dot-circle-o fa-fw w3-margin-right w3-large w3-text-black"></i><a href="/login">Logout</a></p>
+                    <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-large w3-text-black"></i>  <input type="text" th:field="*{password}" name="txt_pwd" placeholder="Enter Password" required></p>
+
+
+
                     <hr>
                 </div>
             </div>
@@ -189,18 +200,37 @@
                     <label for="zone">Select current location:
                         <select name="zone" id="zone">
                         <option th:each="zone : ${zones}"
+                                th:value="${zone.name}"
                            th:text="${zone.name}"></option>
-                    </select>
+                        </select>
                     </label>
+                    <label for="zone2">Select destination:
+                        <select name="zone2" id="zone2">
+                            <option th:each="zone : ${zones}"
+                                    th:value="${zone.name}"
+                                    th:text="${zone.name}"></option>
+                        </select>
+                    </label>
+                    <div class="text-center">
+                        <button style="text-align:center;background-color:white; border: 2px solid #4CAF50;font-weight:bold" type="submit"  value="search" name="action" id="but_search">Search</button>
+                        <h3 style="text-align:center;">Available cars in <b th:text="${location}"/></h3>
+                        <ul th:each="car : ${cars}">
+                            <li th:text="${car.licensePlate}"></li>
+                        </ul>
+                        <h3 style="text-align:center;">Available parking spots in <b th:text="${destination}"/>- <b th:text="${spots}"/></h3>
+
+                    </div>
+
 
                 </div>
             </div>
         </div>
 
+
     </div>
 
 </div>
-
+</form>
 
 </body>
 </html>
