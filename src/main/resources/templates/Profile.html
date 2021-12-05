@@ -225,6 +225,89 @@
 
     </div>
 
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+        var markers = [
+            {
+                "title": 'Car 1 - Centru',
+                "lat": '46.770609 ',
+                "lng": '23.594624',
+                "description": 'Car 1 in Zone Centru'
+            },
+            {
+                 "title": 'Car 2 - Centru',
+                 "lat": '46.769667',
+                 "lng": '23.589194',
+                 "description": 'Car 2 in Zone Centru'
+            },
+            {
+                "title": 'Car 3 - Centru',
+                "lat": '46.770108',
+                "lng": '23.585075',
+                "description": 'Car 3 in Zone Centru'
+            },
+            {
+                "title": 'Car 4 - Centru',
+                "lat": '46.769652',
+                "lng": '23.586974',
+                "description": 'Car 4 in Zone Centru'
+            },
+            {
+                "title": 'Car 5 - Centru',
+                "lat": '46.769623',
+                "lng": '23.586963',
+                "description": 'Car 5 in Zone Centru'
+
+            },
+            {
+                "title": 'Car 6 - Centru',
+                "lat": '46.769138',
+                "lng": '23.585901',
+                "description": 'Car 6 in Zone Centru'
+
+            }
+        ];
+
+        window.onload = function () {
+            initMap();
+        }
+        function initMap() {
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+
+            for (var i = 0; i < markers.length; i++) {
+                var data = markers[i];
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: data.title
+                });
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                        infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker, data);
+            }
+        }
+    </script>
+
+    <div id="dvMap" style="width: 700px; height: 400px">
+    </div>
+
+
+
+</div>
+
+
+
 </div>
 </form>
 
