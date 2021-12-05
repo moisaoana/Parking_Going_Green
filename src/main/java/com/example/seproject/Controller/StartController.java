@@ -15,11 +15,5 @@ public class StartController {
     public String startForm(Model model) {
         return "start";
     }
-    /*
-    @PostMapping("/login")
-    public String startSubmit(Model model) {
-        return "login";
-    }
 
-     */
 }

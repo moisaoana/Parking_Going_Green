@@ -211,17 +211,17 @@
                         <button style="text-align:center;background-color:white; border: 2px solid #4CAF50;font-weight:bold" type="submit"  value="search" name="action" id="but_search">Search</button>
                         <h3 style="text-align:center; color:white">Cars available in <b th:text="${location}"/></h3>
                         <ul th:each="car : ${cars}">
-                            <li th:text="${car.licensePlate}"></li>
+                            <input type="radio" id="huey" name="drone" value="huey" checked>
+                            <b for="huey"><b th:text="${car.licensePlate}" th:value="${car.licensePlate}"/> </b>
                         </ul>
+                        <div class="container">
+                            <button style="text-align:center;background-color:white; border: 2px solid #4CAF50;font-weight:bold" type="submit"  value="submit" name="action" id="but_submit">Rent</button>
+                        </div>
                         <h3 style="text-align:center; color:white">Available parking spots in <b th:text="${destination}"/>: <b th:text="${spots}"/></h3>
-
                     </div>
-
-
                 </div>
             </div>
         </div>
-
 
     </div>
 

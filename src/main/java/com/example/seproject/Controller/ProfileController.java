@@ -40,6 +40,11 @@ public class ProfileController {
         model.addAttribute("destination",destination);
         return "profile";
     }
+    @RequestMapping(value="/profile", method=RequestMethod.POST, params="action=submit")
+    public String rentSubmit(@ModelAttribute User user,Model model, @RequestParam(value="action", required=true) String action) {
+        System.out.println("*htrjyjr");
+        return "rent";
+    }
     @GetMapping("/profile")
     public String handleGetRequest(Model model) {
         model.addAttribute("user", new User());
