@@ -28,7 +28,7 @@ public class ProfileController {
             }
             if(z.getName().equals(zone2)){
                 for(ParkingStation p: z.getParkingStationList()){
-                    spots=p.getAvailableSpots();
+                    spots+=p.getAvailableSpots();
                 }
             }
         }
