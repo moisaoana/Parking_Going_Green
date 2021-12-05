@@ -31,14 +31,4 @@ public class LoginController {
         model.addAttribute("zones", zones);
         return "profile";
     }
-
-
-    /*@PostMapping("/login")
-    public String greetingSubmit1(@ModelAttribute User user, Model model) {
-        model.addAttribute("login", user);
-        System.out.println(user.getUsername());
-        return "result";
-    }*/
-
-
 }

@@ -6,25 +6,7 @@ import java.util.List;
 public class ParkingSession {
     private List<Zone> zones=new ArrayList<>();
     public ParkingSession(){
-
         zones=Serializator.deserializeZones();
-        /*
-        for(Zone zone: zones){
-            System.out.println(zone.getName());
-            for(ParkingStation parkingStation: zone.getParkingStationList()){
-                System.out.println(parkingStation.getNumber());
-                System.out.println(parkingStation.getCapacity());
-                System.out.println(parkingStation.getAvailableSpots());
-                for(ElectricCar electricCar: parkingStation.getParkedCars()){
-                    System.out.println(electricCar.getLicensePlate());
-                    System.out.println(electricCar.getStatus());
-                }
-            }
-        }
-
-         */
-
-
     }
 
     public List<Zone> getZones() {
@@ -206,10 +188,6 @@ public class ParkingSession {
         zones.add(zoneCentru);
 
         Serializator.serializeZones(zones,"src\\main\\resources\\zones.txt");
-
-
-
-
     }
 
 
