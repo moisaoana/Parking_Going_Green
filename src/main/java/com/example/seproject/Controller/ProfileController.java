@@ -41,8 +41,13 @@ public class ProfileController {
         return "profile";
     }
     @RequestMapping(value="/profile", method=RequestMethod.POST, params="action=submit")
-    public String rentSubmit(@ModelAttribute User user,Model model, @RequestParam(value="action", required=true) String action) {
-        System.out.println("*htrjyjr");
+    public String rentSubmit(@ModelAttribute User user,Model model, @RequestParam(value="action", required=true) String action,@RequestParam("car") String car,@RequestParam String zone,@RequestParam String zone2) {
+        System.out.println(car);
+        model.addAttribute("car",car);
+        String location=zone;
+        String destination=zone2;
+        model.addAttribute("location",location);
+        model.addAttribute("destination",destination);
         return "rent";
     }
     @GetMapping("/profile")
