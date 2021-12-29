@@ -25,6 +25,7 @@ public class LoginController {
     @PostMapping("/profile")
     public String greetingSubmit(@ModelAttribute User user, Model model) {
         SeProjectApplication.event.subscribe("New car rent",user);
+
         for(Observer obs: SeProjectApplication.event.getListeners("New car rent")){
             if(obs instanceof User){
                 System.out.println(((User) obs).getUsername());

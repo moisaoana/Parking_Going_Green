@@ -20,7 +20,7 @@ public class Admin extends User implements Runnable{
     void applicationReadyEvent() {
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("http://localhost:");
-        stringBuilder.append(this.port).append("/start");
+        stringBuilder.append(this.port).append("/admin");
         System.out.println("Application started ... launching browser now");
         browse(stringBuilder.toString());
     }
@@ -46,6 +46,11 @@ public class Admin extends User implements Runnable{
     @Override
     public void run() {
         openLocalHost();
+    }
+
+    @Override
+    public void update(String eventType) throws IOException {
+        System.out.println("notify admin");
     }
 
 }

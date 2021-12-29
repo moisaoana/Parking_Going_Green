@@ -39,7 +39,7 @@ public class SeProjectApplication {
         List<String> strings= new ArrayList<>();
         strings.add("New car rent");
         event.setListeners(strings);
-
+        event.subscribe("New car rent", admin);
 
 
 

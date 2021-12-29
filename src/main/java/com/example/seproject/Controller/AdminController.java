@@ -12,7 +12,7 @@ public class AdminController {
         ParkingSession parkingSession = new ParkingSession();
         List<Zone> zones = parkingSession.getZones();
         model.addAttribute("zones", zones);
-        List<ParkingStation> parkingStations = new ArrayList<ParkingStation>();
+        List<ParkingStation> parkingStations;
         parkingStations = parkingSession.getZones().get(0).getParkingStationList();
         model.addAttribute("parkingStations", parkingStations);
         return "admin";
