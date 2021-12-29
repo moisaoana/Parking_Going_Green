@@ -2,18 +2,19 @@ package com.example.seproject.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ParkingSession {
-    private List<Zone> zones=new ArrayList<>();
+    private CopyOnWriteArrayList<Zone> zones=new CopyOnWriteArrayList<>();
     public ParkingSession(){
         zones=Serializator.deserializeZones();
     }
 
-    public List<Zone> getZones() {
+    public CopyOnWriteArrayList<Zone> getZones() {
         return zones;
     }
 
-    public void setZones(List<Zone> zones) {
+    public void setZones(CopyOnWriteArrayList<Zone> zones) {
         this.zones = zones;
     }
 

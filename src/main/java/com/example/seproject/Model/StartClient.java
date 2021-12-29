@@ -7,9 +7,9 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 
-public class Admin extends User implements Runnable{
+public class StartClient implements Runnable {
     int port;
-    public Admin(int port){
+    public StartClient(int port){
         this.port=port;
     }
     public void openLocalHost() {
@@ -29,6 +29,7 @@ public class Admin extends User implements Runnable{
         if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();
             try {
+                System.out.println("*");
                 desktop.browse(new URI(url));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -36,6 +37,7 @@ public class Admin extends User implements Runnable{
         } else {
             Runtime runtime = Runtime.getRuntime();
             try {
+                System.out.println("k");
                 runtime.exec("rundll32 url.dll,FileProtocolHandler " + url);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -47,5 +49,4 @@ public class Admin extends User implements Runnable{
     public void run() {
         openLocalHost();
     }
-
 }

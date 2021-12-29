@@ -2,7 +2,9 @@ package com.example.seproject.Model;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-public class User {
+import java.io.IOException;
+
+public class User implements Observer{
     private String username;
     private String password;
     private Zone currentZone;
@@ -38,5 +40,11 @@ public class User {
 
     public void setDestinationZone(Zone destinationZone) {
         this.destinationZone = destinationZone;
+    }
+
+    @Override
+    public void update(String eventType) throws IOException {
+        ParkingSession parkingSession=new ParkingSession();
+        System.out.println("notify");
     }
 }

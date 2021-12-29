@@ -3,10 +3,11 @@ package com.example.seproject.Model;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Serializator implements Serializable {
-    public static List<Zone> deserializeZones(){
-        List<Zone> zones=new ArrayList<>();
+    public static CopyOnWriteArrayList<Zone> deserializeZones(){
+        CopyOnWriteArrayList<Zone> zones=new CopyOnWriteArrayList<>();
         FileInputStream file = null;
         try {
             file = new FileInputStream("src\\main\\resources\\zones.txt");
@@ -16,7 +17,7 @@ public class Serializator implements Serializable {
         try {
             if(file.available()>0) {
                 ObjectInputStream in = new ObjectInputStream(file);
-                zones= (List) in.readObject();
+                zones= (CopyOnWriteArrayList) in.readObject();
                 in.close();
             }
             file.close();
@@ -25,7 +26,7 @@ public class Serializator implements Serializable {
         }
         return zones;
     }
-    public static void serializeZones(List<Zone> zones, String filename){
+    public static void serializeZones(CopyOnWriteArrayList<Zone> zones, String filename){
         FileOutputStream file = null;
         try {
             file = new FileOutputStream(filename);
