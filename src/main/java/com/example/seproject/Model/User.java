@@ -1,7 +1,13 @@
 package com.example.seproject.Model;
 
+import com.example.seproject.Controller.ProfileController;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.io.IOException;
 
 public class User implements Observer{
@@ -44,7 +50,6 @@ public class User implements Observer{
 
     @Override
     public void update(String eventType) throws IOException {
-        ParkingSession parkingSession=new ParkingSession();
         System.out.println("notify");
     }
 }

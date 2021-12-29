@@ -69,33 +69,26 @@ public class ProfileController {
         model.addAttribute("destination",destination);
         ParkingSession parkingSession = new ParkingSession();
         CopyOnWriteArrayList<Zone> zones = parkingSession.getZones();
-        for(Zone z: zones){
-            if(z.getName().equals(location)){
-                for(ParkingStation p: z.getParkingStationList()){
-                    /*
-                    for(ElectricCar electricCar: p.getParkedCars()){
-                        if(electricCar.getLicensePlate().equals(car)){
-                            rentCar=electricCar;
-                            p.getParkedCars().remove(electricCar);
-                            p.setAvailableSpots(p.getAvailableSpots()+1);
-                        }
-
-                    }*/
+        for(Zone z: zones) {
+            if (z.getName().equals(location)) {
+                for (ParkingStation p : z.getParkingStationList()) {
                     for (Iterator<ElectricCar> it = p.getParkedCars().iterator(); it.hasNext(); ) {
                         ElectricCar electricCar = it.next();
                         if (electricCar.getLicensePlate().equals(car)) {
-                            rentCar=electricCar;
+                            rentCar = new ElectricCar(electricCar.getLicensePlate(), electricCar.getParkingStation(), electricCar.isAvailable(), electricCar.getStatus());
                             it.remove();
-                            p.setAvailableSpots(p.getAvailableSpots()+1);
+                            p.setAvailableSpots(p.getAvailableSpots() + 1);
                         }
                     }
 
                 }
             }
-            if(z.getName().equals(destination)){
-                for(ParkingStation p: z.getParkingStationList()){
-                    if(p.getNumber()==Integer.parseInt(station)){
-                        p.setAvailableSpots(p.getAvailableSpots()-1);
+        }
+        for(Zone z: zones) {
+            if (z.getName().equals(destination)) {
+                for (ParkingStation p : z.getParkingStationList()) {
+                    if (p.getNumber() == Integer.parseInt(station)) {
+                        p.setAvailableSpots(p.getAvailableSpots() - 1);
                         p.getParkedCars().add(rentCar);
                     }
                 }
@@ -114,8 +107,9 @@ public class ProfileController {
         SeProjectApplication.event.notify("New car rent");
         return "rent";
     }
+
     @GetMapping("/profile")
-    public String handleGetRequest(Model model) {
+    public static String handleGetRequest(Model model) {
         model.addAttribute("user", new User());
         return "profile";
     }
