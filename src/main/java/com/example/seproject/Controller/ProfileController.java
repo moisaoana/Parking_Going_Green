@@ -103,7 +103,7 @@ public class ProfileController {
                 }
             }
         }
-        Serializator.serializeZones(zones,"D:\\Anul_3\\SE\\Final_Project\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
+        Serializator.serializeZones(zones,"D:\\AN 3\\SEM1\\SE\\ProiectSE\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
         SeProjectApplication.event.notify("New car rent");
         return "rent";
     }

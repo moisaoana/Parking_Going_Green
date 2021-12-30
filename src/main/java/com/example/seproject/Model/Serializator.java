@@ -10,7 +10,7 @@ public class Serializator implements Serializable {
         CopyOnWriteArrayList<Zone> zones=new CopyOnWriteArrayList<>();
         FileInputStream file = null;
         try {
-            file = new FileInputStream("D:\\Anul_3\\SE\\Final_Project\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
+            file = new FileInputStream("D:\\AN 3\\SEM1\\SE\\ProiectSE\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }

@@ -8,7 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 
-public class Admin extends User implements StartApp {
+public class Admin extends User  {
     int port;
     public Admin(int port){
         this.port=port;
@@ -21,7 +21,7 @@ public class Admin extends User implements StartApp {
     void applicationReadyEvent() {
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("http://localhost:");
-        stringBuilder.append(this.port).append("/start");
+        stringBuilder.append(this.port).append("/admin");
         System.out.println("Application started ... launching browser now");
         browse(stringBuilder.toString());
     }

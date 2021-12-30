@@ -188,7 +188,7 @@ public class ParkingSession {
         zones.add(zoneManastur);
         zones.add(zoneCentru);
 
-        Serializator.serializeZones(zones,"D:\\Anul_3\\SE\\Final_Project\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
+        Serializator.serializeZones(zones,"D:\\AN 3\\SEM1\\SE\\ProiectSE\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
     }
 
 

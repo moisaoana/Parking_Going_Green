@@ -38,7 +38,7 @@ public class SeProjectApplication {
         StartClient client4=new StartClient(8080);
         StartClient client5=new StartClient(8080);*/
 
-        //Admin admin = new Admin(8080);
+        Admin admin = new Admin(8080);
         List<String> strings= new ArrayList<>();
         strings.add("New car rent");
         event.setListeners(strings);
@@ -79,7 +79,7 @@ public class SeProjectApplication {
         threadAdmin.start();*/
 
 
-
+        admin.openLocalHost();
     }
     /*@GetMapping("/hello") public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
        return String.format("Hello %s!", name); }*/
