@@ -1,5 +1,6 @@
 package com.example.seproject.Model;
 
+import com.example.seproject.StartApp;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
@@ -7,7 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 
-public class StartClient implements Runnable {
+public class StartClient implements StartApp {
     int port;
     public StartClient(int port){
         this.port=port;
@@ -16,7 +17,7 @@ public class StartClient implements Runnable {
         applicationReadyEvent();
     }
 
-    @EventListener({ApplicationReadyEvent.class})
+    //@EventListener({ApplicationReadyEvent.class})
     void applicationReadyEvent() {
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("http://localhost:");
@@ -45,8 +46,8 @@ public class StartClient implements Runnable {
         }
     }
 
-    @Override
+    /*@Override
     public void run() {
         openLocalHost();
-    }
+    }*/
 }

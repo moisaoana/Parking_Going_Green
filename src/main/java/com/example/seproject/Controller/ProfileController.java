@@ -58,8 +58,8 @@ public class ProfileController {
         System.out.println(station);
         model.addAttribute("car",car);
         model.addAttribute("station",station);
-       // String location=zone;
-       // String destination=zone2;
+        // String location=zone;
+        // String destination=zone2;
         String location=this.z1;
         String destination=this.z2;
         System.out.println(location);
@@ -103,7 +103,7 @@ public class ProfileController {
                 }
             }
         }
-        Serializator.serializeZones(zones,"src\\main\\resources\\zones.txt");
+        Serializator.serializeZones(zones,"D:\\Anul_3\\SE\\Final_Project\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
         SeProjectApplication.event.notify("New car rent");
         return "rent";
     }

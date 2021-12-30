@@ -1,5 +1,6 @@
 package com.example.seproject.Model;
 
+import com.example.seproject.StartApp;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
@@ -7,7 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 
-public class Admin extends User implements Runnable{
+public class Admin extends User implements StartApp {
     int port;
     public Admin(int port){
         this.port=port;
@@ -16,11 +17,11 @@ public class Admin extends User implements Runnable{
         applicationReadyEvent();
     }
 
-    @EventListener({ApplicationReadyEvent.class})
+    //@EventListener({ApplicationReadyEvent.class})
     void applicationReadyEvent() {
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("http://localhost:");
-        stringBuilder.append(this.port).append("/admin");
+        stringBuilder.append(this.port).append("/start");
         System.out.println("Application started ... launching browser now");
         browse(stringBuilder.toString());
     }
@@ -43,14 +44,9 @@ public class Admin extends User implements Runnable{
         }
     }
 
-    @Override
+    /*@Override
     public void run() {
         openLocalHost();
-    }
-
-    @Override
-    public void update(String eventType) throws IOException {
-        System.out.println("notify admin");
-    }
+    }*/
 
 }

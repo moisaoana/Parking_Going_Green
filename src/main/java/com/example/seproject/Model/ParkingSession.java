@@ -67,9 +67,9 @@ public class ParkingSession {
         electricCar5.setParkingStation(parkingStation2);
         electricCar6.setParkingStation(parkingStation2);
 
-       List<ParkingStation>parkingStationsMarasti=new ArrayList<>();
-       parkingStationsMarasti.add(parkingStation1);
-       parkingStationsMarasti.add(parkingStation2);
+        List<ParkingStation>parkingStationsMarasti=new ArrayList<>();
+        parkingStationsMarasti.add(parkingStation1);
+        parkingStationsMarasti.add(parkingStation2);
 
         Zone zoneMarasti=new Zone("Marasti",parkingStationsMarasti);
         parkingStation1.setZone(zoneMarasti);
@@ -188,7 +188,7 @@ public class ParkingSession {
         zones.add(zoneManastur);
         zones.add(zoneCentru);
 
-        Serializator.serializeZones(zones,"src\\main\\resources\\zones.txt");
+        Serializator.serializeZones(zones,"D:\\Anul_3\\SE\\Final_Project\\SE-Project\\src\\main\\java\\com\\example\\seproject\\zones.txt");
     }
 
 
