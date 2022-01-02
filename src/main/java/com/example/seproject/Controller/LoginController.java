@@ -23,7 +23,7 @@ public class LoginController {
     }
 
     @PostMapping("/profile")
-    public String greetingSubmit(@ModelAttribute User user, Model model) {
+    public String loginFormPost(@ModelAttribute User user, Model model) {
         SeProjectApplication.event.subscribe("New car rent",user);
 
         for(Observer obs: SeProjectApplication.event.getListeners("New car rent")){

@@ -1,8 +1,6 @@
 package com.example.seproject.Model;
 
 import com.example.seproject.StartApp;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 
 import java.awt.*;
 import java.io.IOException;
@@ -17,12 +15,11 @@ public class StartClient implements StartApp {
         applicationReadyEvent();
     }
 
-    //@EventListener({ApplicationReadyEvent.class})
     void applicationReadyEvent() {
         StringBuilder stringBuilder=new StringBuilder();
         stringBuilder.append("http://localhost:");
         stringBuilder.append(this.port).append("/start");
-        System.out.println("Application started ... launching browser now");
+        System.out.println("Starting browser now");
         browse(stringBuilder.toString());
     }
 
@@ -45,9 +42,4 @@ public class StartClient implements StartApp {
             }
         }
     }
-
-    /*@Override
-    public void run() {
-        openLocalHost();
-    }*/
 }

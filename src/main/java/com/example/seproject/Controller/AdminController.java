@@ -19,7 +19,7 @@ public class AdminController {
     }
 
     @RequestMapping(value="/admin", method=RequestMethod.POST, params="action=search")
-    public String greetingSubmit(Model model, @RequestParam String zone, @RequestParam int parkingStation) {
+    public String adminForm(Model model, @RequestParam String zone, @RequestParam int parkingStation) {
         ParkingSession parkingSession = new ParkingSession();
         List<Zone> zones = parkingSession.getZones();
         model.addAttribute("zones", zones);
